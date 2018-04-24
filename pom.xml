@@ -19,141 +19,32 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <jacoco.reportPath>${project.basedir}/drone-module/target/jacoco.exec</jacoco.reportPath>
 
-        <jacoco.version>0.8.1</jacoco.version>
+
+
+
+       <!-- <jacoco.version>0.8.1</jacoco.version>
 		<build-helper-maven-plugin>1.9.1</build-helper-maven-plugin>
         <maven-javadoc-plugin>3.0.0</maven-javadoc-plugin>
-        <apache-maven-plugins>2.18.1</apache-maven-plugins>
-        <!--It will be used to locate the file to be used-->
-        <build.profile.id>dev</build.profile.id>
+        <apache-maven-plugins>2.18.1</apache-maven-plugins>-->
 
-        <!--By default, only unit tests will be executed-->
-        <skip.integration.tests>true</skip.integration.tests>
-        <skip.unit.tests>false</skip.unit.tests>
 		
 		
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-	
-	<profiles>
-        <profile>
-            <id>dev</id>
-        </profile>
-        <profile>
-            <id>integration-test</id>
-            <properties>
-                <build.profile.id>integration-test</build.profile.id>
-                <!-- Only integration tests will be executed-->
-                <skip.integration.tests>false</skip.integration.tests>
-                <skip.unit.tests>true</skip.unit.tests>
-            </properties>
-        </profile>
-    </profiles>
+
 	
 	<build>
-        <finalName>Drone</finalName>
-        <filters>
-            <filter>../profiles/${build.profile.id}/config.properties</filter>
-        </filters>
-        <resources>
-            <resource>
-                <filtering>true</filtering>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
+        <finalName>DroneParent</finalName>
+
         <plugins>
 			<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.6.1</version>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>${build-helper-maven-plugin}</version>
-                <executions>
-                    <execution>
-                        <id>add-integration-test-sources</id>
-                        <phase>generate-test-sources</phase>
-                        <goals>
-                            <goal>add-test-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>src/integration-test/java</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${apache-maven-plugins}</version>
-                <configuration>
-                    <skipTests>${skip.unit.tests}</skipTests>
-                    <excludes>
-                        <exclude>**/*IT.java</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>${apache-maven-plugins}</version>
-                <executions>
-                    <execution>
-                        <id>integration-tests</id>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                        <configuration>
-                            <skipTests>${skip.integration.tests}</skipTests>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${jacoco.version}</version>
-                <configuration>
-                    <destFile>${jacoco.reportPath}</destFile>
-                    <!--<append>true</append>-->
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>post-unit-test</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                        <configuration>
-                            <!-- Sets the path to the file which contains the execution data. -->
-                            <dataFile>../target/jacoco.exec</dataFile>
-                            <!-- Sets the output directory for the code coverage report. -->
-                            <outputDirectory>../target/jacoco-ut</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
+           <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${maven-javadoc-plugin}</version>
@@ -161,22 +52,6 @@
                     <show>private</show>
                     <nohelp>true</nohelp>
                 </configuration>
-            </plugin>
-            <!--<plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <configuration>
-                            <tasks>
-                                <replace file="target/jacoco-ut/jacoco.xml" token="com/" value="src/main/java/com/"/>
-                            </tasks>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>-->
         </plugins>
     </build>
@@ -196,7 +71,7 @@
 		</dependencies>
 	</dependencyManagement>
 	
-	<reporting>
+	<!--<reporting>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -204,5 +79,5 @@
                 <version>${maven-javadoc-plugin}</version>
             </plugin>
         </plugins>
-    </reporting>
+    </reporting>-->
 </project>

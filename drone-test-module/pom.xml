@@ -11,6 +11,12 @@
     <artifactId>drone-test-module</artifactId>
 
     <properties>
+        <java.version>9</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+
+        <!--<jacoco.reportPath>${project.basedir}/target/jacoco.exec</jacoco.reportPath>-->
+
         <jacoco.version>0.8.1</jacoco.version>
         <powermock.version>2.0.0-beta.5</powermock.version>
         <mockito2.version>2.18.0</mockito2.version>
@@ -19,15 +25,15 @@
         <apache-maven-plugins>2.18.1</apache-maven-plugins>
         <junit.version>4.12</junit.version>
        
-        <!--It will be used to locate the file to be used-->
-        <build.profile.id>dev</build.profile.id>
+        <!--It will be used to locate the file to be used
+        <build.profile.id>dev</build.profile.id>-->
 
-        <!--By default, only unit tests will be executed-->
+        <!--By default, only unit tests will be executed
         <skip.integration.tests>true</skip.integration.tests>
-        <skip.unit.tests>false</skip.unit.tests>
+        <skip.unit.tests>false</skip.unit.tests>-->
     </properties>
-<!--
-    <profiles>
+
+    <!--<profiles>
         <profile>
             <id>dev</id>
         </profile>
@@ -40,21 +46,27 @@
                 <skip.unit.tests>true</skip.unit.tests>
             </properties>
         </profile>
-    </profiles>
+    </profiles>-->
 
     <build>
-        <finalName>Drone</finalName>
-        <filters>
+
+        <!--<sourceDirectory>../../SourceMik</sourceDirectory>  tested sources root, in proper layout: src/main/java -->
+        <!--<outputDirectory>../drone-test-module/target/classes</outputDirectory>  tested classes root, in proper layout: target/classes -->
+
+
+
+        <finalName>DroneTest</finalName>
+        <!--<filters>
             <filter>profiles/${build.profile.id}/config.properties</filter>
         </filters>
         <resources>
             <resource>
                 <filtering>true</filtering>
-                <directory>src/main/resources</directory>
+                <directory>../drone-module/src/main/resources</directory>
             </resource>
-        </resources>
+        </resources>-->
         <plugins>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
                 <version>${build-helper-maven-plugin}</version>
@@ -100,7 +112,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -126,42 +138,34 @@
                             <goal>report</goal>
                         </goals>
                         <configuration>
-                             Sets the path to the file which contains the execution data.
+                             <!--Sets the path to the file which contains the execution data.-->
                             <dataFile>target/jacoco.exec</dataFile>
-                             Sets the output directory for the code coverage report.
+                             <!--Sets the output directory for the code coverage report.-->
                             <outputDirectory>target/jacoco-ut</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${maven-javadoc-plugin}</version>
+    <!--
+    <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+            <execution>
+                <phase>test</phase>
                 <configuration>
-                    <show>private</show>
-                    <nohelp>true</nohelp>
+                    <tasks>
+                        <replace file="target/jacoco-ut/jacoco.xml" token="com/" value="src/main/java/com/"/>
+                    </tasks>
                 </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <configuration>
-                            <tasks>
-                                <replace file="target/jacoco-ut/jacoco.xml" token="com/" value="src/main/java/com/"/>
-                            </tasks>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
--->
+                <goals>
+                    <goal>run</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>-->
+</plugins>
+</build>
+
     <dependencies>
 		
 		<dependency>
