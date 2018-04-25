@@ -3,7 +3,7 @@ package com.drone.service;
 public interface UrbanizationsTreatmentSimulatedService {
 
     /**
-     * Returns the center of the bidemensional array in case the size is odd. If it is even, it will subtract 1 from the size and treat it as odd.
+     * Returns the center of the two-dimensional array in case the size is odd. If it is even, it will subtract 1 from the size and treat it as odd.
      * @return the id of the central position
      */
     String getCenterOfArray();

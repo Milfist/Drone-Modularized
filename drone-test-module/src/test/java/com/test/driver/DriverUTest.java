@@ -1,10 +1,12 @@
-package com.drone.driver;
+package com.test.driver;
 
 import com.drone.common.Directions;
 import com.drone.common.Range;
 import com.drone.service.UrbanizationsTreatmentService;
 import com.drone.service.UrbanizationsTreatmentServiceImpl;
 import com.drone.service.UrbanizationsTreatmentSimulatedServiceImpl;
+import com.drone.driver.Driver;
+import com.drone.driver.DriverImpl;
 import org.junit.Before;
 import org.junit.Test;
 

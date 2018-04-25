@@ -1,6 +1,9 @@
-package com.drone.service;
+package com.test.service;
 
 import com.drone.common.Directions;
+import com.drone.service.UrbanizationsTreatmentService;
+import com.drone.service.UrbanizationsTreatmentSimulatedService;
+import com.drone.service.UrbanizationsTreatmentSimulatedServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -3,3 +3,4 @@
 *.iml
 drone-module/target/
 drone-test-module/target/
+drone-app-module/target/

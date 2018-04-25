@@ -4,11 +4,17 @@ import com.drone.common.Directions;
 import com.drone.service.UrbanizationsTreatmentService;
 
 /**
- * @see com.drone.driver.Driver
+ * @see Driver
  */
 public class DriverImpl implements Driver {
 
     private UrbanizationsTreatmentService service;
+
+    /**
+     * Public default constructor
+     */
+    public DriverImpl() {
+    }
 
     /**
      * Driver class constructor

@@ -3,13 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>drone.modularized</groupId>
-    <artifactId>drone-modularized</artifactId>
+    <artifactId>drone-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Drone Modularized</name>
     <description>Modularization of a project with Java9</description>
     <packaging>pom</packaging>
 
 	<modules>
+        <module>drone-app-module</module>
         <module>drone-module</module>
         <module>drone-test-module</module>
     </modules>
@@ -18,43 +19,9 @@
         <java.version>9</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-
-
-
-
-
-       <!-- <jacoco.version>0.8.1</jacoco.version>
-		<build-helper-maven-plugin>1.9.1</build-helper-maven-plugin>
-        <maven-javadoc-plugin>3.0.0</maven-javadoc-plugin>
-        <apache-maven-plugins>2.18.1</apache-maven-plugins>-->
-
-		
-		
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-
-	
-	<build>
-        <finalName>DroneParent</finalName>
-
-        <plugins>
-			<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
-            </plugin>
-           <!-- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${maven-javadoc-plugin}</version>
-                <configuration>
-                    <show>private</show>
-                    <nohelp>true</nohelp>
-                </configuration>
-            </plugin>-->
-        </plugins>
-    </build>
 	
 	<dependencyManagement>
 		<dependencies>
@@ -70,14 +37,4 @@
             </dependency>
 		</dependencies>
 	</dependencyManagement>
-	
-	<!--<reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${maven-javadoc-plugin}</version>
-            </plugin>
-        </plugins>
-    </reporting>-->
 </project>

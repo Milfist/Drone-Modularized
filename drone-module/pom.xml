@@ -4,12 +4,39 @@
 
 	<parent>
         <groupId>drone.modularized</groupId>
-        <artifactId>drone-modularized</artifactId>
+        <artifactId>drone-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 	
     <artifactId>drone-module</artifactId>
-	
 
+    <properties>
+        <maven-javadoc-plugin>3.0.0</maven-javadoc-plugin>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin}</version>
+                <configuration>
+                    <show>private</show>
+                    <nohelp>true</nohelp>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin}</version>
+            </plugin>
+        </plugins>
+    </reporting>
 
 </project>
