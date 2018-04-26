@@ -1,4 +1,4 @@
-module com.test {
+module com.testexec {
     requires junit;
     requires drone.module;
     requires org.mockito;

@@ -1,9 +1,9 @@
-package drone.driver;
+package com.integrationTest;
 
-import com.drone.test.common.Range;
-import com.drone.test.driver.Driver;
-import com.drone.test.driver.DriverImpl;
-import com.drone.test.service.UrbanizationsTreatmentSimulatedServiceImpl;
+import com.drone.common.Range;
+import com.drone.driver.Driver;
+import com.drone.driver.DriverImpl;
+import com.drone.service.UrbanizationsTreatmentSimulatedServiceImpl;
 import org.junit.Test;
 
 import java.util.Optional;

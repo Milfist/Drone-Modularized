@@ -32,9 +32,7 @@
                                 <argument>--module-path</argument>
                                 <modulepath/>
                                 <argument>--module</argument>
-                                <!--<argument>com.drone.app</argument>-->
-                                <!--<mainClass/>-->
-                                <argument>com.drone.app/com.drone.app.Main</argument>
+                                <argument>drone.app/com.app.Main</argument>
                             </arguments>
                         </configuration>
                     </plugin>
@@ -42,6 +40,10 @@
             </build>
         </profile>
     </profiles>
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <outputDirectory>${project.build.directory}/classes/${project.artifactId}</outputDirectory>
+    </build>
     <dependencies>
         <dependency>
             <groupId>drone.modularized</groupId>
