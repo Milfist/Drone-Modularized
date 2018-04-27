@@ -12,14 +12,13 @@
 
     <properties>
         <mockito2.version>2.18.0</mockito2.version>
-        <powermock.version>2.0.0-beta.5</powermock.version>
         <junit.version>4.12</junit.version>
     </properties>
 
     <build>
-        <!--<sourceDirectory>../drone-module/src/main/java</sourceDirectory>-->
         <sourceDirectory>src/com.testexec</sourceDirectory>
-        <!--<outputDirectory>${project.build.directory}/classes/${project.artifactId}</outputDirectory>-->
+        <testSourceDirectory>src/com.testexec</testSourceDirectory>
+        <outputDirectory>${project.build.directory}/classes/${project.artifactId}</outputDirectory>
         <finalName>DroneExecTest</finalName>
         <resources>
             <resource>
@@ -45,13 +44,21 @@
                         <argument>--module-path</argument>
                         <modulepath/>
                         <argument>--add-modules</argument>
-                        <argument>com.test</argument>
+                        <argument>com.testexec</argument>
                         <argument>--module</argument>
                         <argument>junit/org.junit.runner.JUnitCore</argument>
-                        <argument>test.driver.DriverUTest</argument>
-                        <argument>test.service.UrbanizationsTreatmentServiceUTest</argument>
-                        <argument>test.service.UrbanizationsTreatmentSimulatedServiceUTest</argument>
+                        <!--TODO--><!--<argument>com.testexec.driver.DriverUTest</argument>-->
+                        <argument>com.testexec.service.UrbanizationsTreatmentServiceUTest</argument>
+                        <argument>com.testexec.service.UrbanizationsTreatmentSimulatedServiceUTest</argument>
                     </arguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${apache-maven-plugins}</version>
+                <configuration>
+                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>
@@ -71,24 +78,6 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>${mockito2.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-module-junit4</artifactId>
-            <version>${powermock.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-core</artifactId>
-            <version>${powermock.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-api-mockito2</artifactId>
-            <version>${powermock.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

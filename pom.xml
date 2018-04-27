@@ -20,6 +20,7 @@
         <java.version>9</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <apache-maven-plugins>2.18.1</apache-maven-plugins>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -52,4 +53,14 @@
             </dependency>
 		</dependencies>
 	</dependencyManagement>
+
+    <!--<dependencies>-->
+        <!--<dependency>-->
+            <!--<groupId>org.projectlombok</groupId>-->
+            <!--<artifactId>lombok</artifactId>-->
+            <!--<version>1.16.20</version>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+    <!--</dependencies>-->
+
 </project>

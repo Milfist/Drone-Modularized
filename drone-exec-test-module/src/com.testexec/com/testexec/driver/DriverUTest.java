@@ -1,4 +1,4 @@
-package com.test.driver;
+package com.testexec.driver;
 
 import com.drone.common.Directions;
 import com.drone.common.Range;
@@ -10,7 +10,9 @@ import com.drone.driver.DriverImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.Optional;
 import java.util.OptionalDouble;
@@ -18,7 +20,7 @@ import java.util.OptionalDouble;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-
+@RunWith(MockitoJUnitRunner.class)
 public class DriverUTest {
 
 	private static final Double X = 38.56889;

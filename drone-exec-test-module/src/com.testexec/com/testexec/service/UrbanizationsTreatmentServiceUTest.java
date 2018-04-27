@@ -1,17 +1,13 @@
-package com.test.service;
+package com.testexec.service;
 
 import com.drone.service.UrbanizationsTreatmentService;
-import com.drone.service.UrbanizationsTreatmentServiceImpl;
 import org.junit.Test;
-
-//import java.util.ServiceLoader;
-
+import java.util.ServiceLoader;
 import static org.junit.Assert.assertEquals;
 
 public class UrbanizationsTreatmentServiceUTest {
 
-//	private UrbanizationsTreatmentService service = ServiceLoader.load(UrbanizationsTreatmentService.class).findFirst().get();
-    private UrbanizationsTreatmentService service = new UrbanizationsTreatmentServiceImpl();
+	private UrbanizationsTreatmentService service = ServiceLoader.load(UrbanizationsTreatmentService.class).findFirst().get();
 
 	@Test
 	public void shouldBeOkInGetAdjacentCallForAnythingParams() {
