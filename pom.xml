@@ -14,6 +14,7 @@
         <module>drone-module</module>
         <module>drone-test-module</module>
         <module>drone-exec-test-module</module>
+        <module>drone-resources</module>
     </modules>
 	
     <properties>
@@ -47,9 +48,15 @@
 				<version>0.0.1-SNAPSHOT</version>
             </dependency>
 			<dependency>
-				<groupId>drone.modularized</groupId>
-				<artifactId>drone-module</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+                <groupId>drone.modularized</groupId>
+                <artifactId>drone-module</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>drone.modularized</groupId>
+                <artifactId>drone-resources</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <type>test-jar</type>
             </dependency>
 		</dependencies>
 	</dependencyManagement>

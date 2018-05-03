@@ -41,4 +41,11 @@
         </plugins>
     </reporting>
 
+    <dependencies>
+        <dependency>
+            <groupId>drone.modularized</groupId>
+            <artifactId>drone-resources</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

@@ -97,16 +97,21 @@
 
     <build>
         <sourceDirectory>../drone-module/src/main/java</sourceDirectory>
+        <!--<testResources>-->
+            <!--<testResource>-->
+                <!--<directory>../drone-resources/src/main/resources</directory>-->
+            <!--</testResource>-->
+        <!--</testResources>-->
         <!--<sourceDirectory>src/test/java</sourceDirectory>-->
         <!--<outputDirectory>${project.build.directory}/classes/${project.artifactId}</outputDirectory>-->
         <finalName>DroneTest</finalName>
         <filters>
-            <filter>../profiles/${build.profile.id}/config.properties</filter>
+            <filter>../drone-resources/src/main/resources/profiles/${build.profile.id}/config.properties</filter>
         </filters>
         <resources>
             <resource>
                 <filtering>true</filtering>
-                <directory>../drone-module/src/main/resources</directory>
+                <directory>../drone-resources/src/main/resources</directory>
             </resource>
         </resources>
         <plugins>
@@ -165,6 +170,11 @@
 			<groupId>drone.modularized</groupId>
 			<artifactId>drone-module</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>drone.modularized</groupId>
+            <artifactId>drone-resources</artifactId>
+            <type>test-jar</type>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

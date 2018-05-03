@@ -23,7 +23,7 @@
         <resources>
             <resource>
                 <filtering>true</filtering>
-                <directory>../drone-module/src/main/resources</directory>
+                <directory>src/main/resources</directory>
             </resource>
         </resources>
         <plugins>
@@ -69,6 +69,10 @@
 			<groupId>drone.modularized</groupId>
 			<artifactId>drone-module</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>drone.modularized</groupId>
+            <artifactId>drone-resources</artifactId>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

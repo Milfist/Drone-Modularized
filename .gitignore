@@ -5,3 +5,4 @@ drone-module/target/
 drone-test-module/target/
 drone-app-module/target/
 drone-exec-test-module/target/
+drone-resources/target/

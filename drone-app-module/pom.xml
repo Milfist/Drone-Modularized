@@ -49,5 +49,9 @@
             <groupId>drone.modularized</groupId>
             <artifactId>drone-module</artifactId>
         </dependency>
+        <dependency>
+            <groupId>drone.modularized</groupId>
+            <artifactId>drone-resources</artifactId>
+        </dependency>
     </dependencies>
 </project>
