@@ -66,7 +66,7 @@
                             </execution>
                         </executions>
                     </plugin>
-                   <plugin>
+                    <plugin>
                         <artifactId>maven-antrun-plugin</artifactId>
                         <executions>
                             <execution>
@@ -97,23 +97,10 @@
 
     <build>
         <sourceDirectory>../drone-module/src/main/java</sourceDirectory>
-        <!--<testResources>-->
-            <!--<testResource>-->
-                <!--<directory>../drone-resources/src/main/resources</directory>-->
-            <!--</testResource>-->
-        <!--</testResources>-->
-        <!--<sourceDirectory>src/test/java</sourceDirectory>-->
-        <!--<outputDirectory>${project.build.directory}/classes/${project.artifactId}</outputDirectory>-->
         <finalName>DroneTest</finalName>
         <filters>
-            <filter>../drone-resources/src/main/resources/profiles/${build.profile.id}/config.properties</filter>
+            <filter>${project.build.directory}/resources/profiles/${build.profile.id}/config.properties</filter>
         </filters>
-        <resources>
-            <resource>
-                <filtering>true</filtering>
-                <directory>../drone-resources/src/main/resources</directory>
-            </resource>
-        </resources>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -173,7 +160,6 @@
         <dependency>
             <groupId>drone.modularized</groupId>
             <artifactId>drone-resources</artifactId>
-            <type>test-jar</type>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

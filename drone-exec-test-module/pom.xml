@@ -20,12 +20,6 @@
         <testSourceDirectory>src/com.testexec</testSourceDirectory>
         <outputDirectory>${project.build.directory}/classes/${project.artifactId}</outputDirectory>
         <finalName>DroneExecTest</finalName>
-        <resources>
-            <resource>
-                <filtering>true</filtering>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

@@ -27,6 +27,16 @@
     </properties>
 
     <build>
+        <resources>
+            <resource>
+                <directory>${project.build.directory}/resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>${project.build.directory}/resources/test</directory>
+            </testResource>
+        </testResources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -36,6 +46,24 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-remote-resources-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <resourceBundles>
+                        <resourceBundle>drone.modularized:drone-resources:${project.version}</resourceBundle>
+                    </resourceBundles>
+                    <outputDirectory>${project.build.directory}/resources</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
@@ -56,7 +84,6 @@
                 <groupId>drone.modularized</groupId>
                 <artifactId>drone-resources</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
-                <type>test-jar</type>
             </dependency>
 		</dependencies>
 	</dependencyManagement>
