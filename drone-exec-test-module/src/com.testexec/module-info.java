@@ -1,6 +1,6 @@
 module com.testexec {
-    requires transitive junit;
-    requires transitive org.mockito;
+    requires junit;
+    requires org.mockito;
 
     requires drone.module;
 

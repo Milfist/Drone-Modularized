@@ -10,7 +10,7 @@ public class Main {
 
         UrbanizationsTreatmentService service = ServiceLoader.load(UrbanizationsTreatmentService.class).findFirst().get();
 
-        String result = service.getPositionByCoordinate(null, null);
+        service.getPositionByCoordinate(null, null);
 
     }
 

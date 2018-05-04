@@ -64,10 +64,6 @@
 			<artifactId>drone-module</artifactId>
 		</dependency>
         <dependency>
-            <groupId>drone.modularized</groupId>
-            <artifactId>drone-resources</artifactId>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
