@@ -115,7 +115,7 @@
                         </goals>
                         <configuration>
                             <sources>
-                                <source>src/integration-test/java</source>
+                                <source>src/test/java/com/integrationTest</source>
                             </sources>
                         </configuration>
                     </execution>
