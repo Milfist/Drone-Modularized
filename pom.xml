@@ -4,18 +4,10 @@
 
     <groupId>drone.modularized</groupId>
     <artifactId>drone-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>Drone Modularized</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <!--<name>Drone Modularized</name>-->
     <description>Modularization of a project with Java9</description>
     <packaging>pom</packaging>
-
-	<modules>
-        <module>drone-app-module</module>
-        <module>drone-module</module>
-        <module>drone-test-module</module>
-        <module>drone-exec-test-module</module>
-        <module>drone-resources</module>
-    </modules>
 	
     <properties>
         <java.version>9</java.version>
@@ -25,6 +17,49 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>classic</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>drone-module</module>
+                <module>drone-test-module</module>
+                <module>drone-resources</module>
+            </modules>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-remote-resources-plugin</artifactId>
+                        <version>1.5</version>
+                        <configuration>
+                            <resourceBundles>
+                                <resourceBundle>drone.modularized:drone-resources:${project.version}</resourceBundle>
+                            </resourceBundles>
+                            <outputDirectory>${project.build.directory}/resources</outputDirectory>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>process</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>j9</id>
+            <modules>
+                <module>drone-app-module</module>
+                <module>drone-exec-test-module</module>
+            </modules>
+        </profile>
+    </profiles>
 
     <build>
         <resources>
@@ -46,24 +81,6 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-remote-resources-plugin</artifactId>
-                <version>1.5</version>
-                <configuration>
-                    <resourceBundles>
-                        <resourceBundle>drone.modularized:drone-resources:${project.version}</resourceBundle>
-                    </resourceBundles>
-                    <outputDirectory>${project.build.directory}/resources</outputDirectory>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>process</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
