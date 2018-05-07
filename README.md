@@ -5,9 +5,9 @@
 [![SonarCloud Vulnerabilities](https://sonarcloud.io/api/badges/measure?key=Drone%3ADrone&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=Drone%3ADrone) [![HitCount](http://hits.dwyl.com/Milfist/Drone.svg)](http://hits.dwyl.com/Milfist/Drone)
 
 
-# Drone
+# Drone Modularized
 
-# [Milfist][0] Drone
+# [Milfist][0] Drone 2.0
 
 ## Description
 
