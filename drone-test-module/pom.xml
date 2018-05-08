@@ -99,7 +99,8 @@
         <sourceDirectory>../drone-module/src/main/java</sourceDirectory>
         <finalName>DroneTest</finalName>
         <filters>
-            <filter>${project.build.directory}/resources/profiles/${build.profile.id}/config.properties</filter>
+            <!--<filter>${project.build.directory}/resources/profiles/${build.profile.id}/config.properties</filter>-->
+            <filter>../drone-resources/src/main/resources/profiles/${build.profile.id}/config.properties</filter>
         </filters>
         <plugins>
             <plugin>

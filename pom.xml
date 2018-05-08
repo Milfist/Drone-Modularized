@@ -4,8 +4,8 @@
 
     <groupId>drone.modularized</groupId>
     <artifactId>drone-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <!--<name>Drone Modularized</name>-->
+    <version>0.0.1-SNAPSHOT</version>
+    <name>drone-parent</name>
     <description>Modularization of a project with Java9</description>
     <packaging>pom</packaging>
 	
@@ -30,6 +30,16 @@
                 <module>drone-resources</module>
             </modules>
             <build>
+                <resources>
+                    <resource>
+                        <directory>${project.build.directory}/resources</directory>
+                    </resource>
+                </resources>
+                <testResources>
+                    <testResource>
+                        <directory>${project.build.directory}/resources/test</directory>
+                    </testResource>
+                </testResources>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -62,16 +72,6 @@
     </profiles>
 
     <build>
-        <resources>
-            <resource>
-                <directory>${project.build.directory}/resources</directory>
-            </resource>
-        </resources>
-        <testResources>
-            <testResource>
-                <directory>${project.build.directory}/resources/test</directory>
-            </testResource>
-        </testResources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -84,7 +84,7 @@
             </plugin>
         </plugins>
     </build>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

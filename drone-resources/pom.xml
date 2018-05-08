@@ -26,7 +26,6 @@
                 <configuration>
                     <includes>
                         <include>**/*.*</include>
-                        <!--<include>**/*.sql</include>-->
                     </includes>
                 </configuration>
             </plugin>
