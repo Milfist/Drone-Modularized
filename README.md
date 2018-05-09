@@ -11,20 +11,20 @@
 
 # [Milfist][0] Drone 2.0
 
-## Description
+<!--## Description
 
 TODO
-
+-->
 ### What will I find?
 
-It is an example application in **Java 9**. It has continuous integration with **Travis CI**, report of unit test coverage and is integrated with **CodeClimate**, **Sonarcloud** and **Codecov**.
+It is the modularization of the Drone application both in ** Java 9 ** modules and in ** Maven ** modules. It has a continuous integration with ** Travis CI **, unit test coverage report and is integrated with ** CodeClimate **, ** Sonarcloud ** and ** Codecov **.
 
-### What I can do?
+<!--### What I can do?
 TODO
 * <code>*mvn test*</code>: Execute the unit tests and generate the coverage report.
 * <code>*mvn verify -P integration-test*</code>: Execute the integration test.
 * <code>*mvn site*</code>: Generate Javadoc documentation.
-
+-->
 ### You want to know more?
 
 You can check the documentation by clicking [**HERE**][1]
