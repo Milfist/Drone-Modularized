@@ -17,7 +17,7 @@ TODO
 -->
 ### What will I find?
 
-It is the modularization of the Drone application both in ** Java 9 ** modules and in ** Maven ** modules. It has a continuous integration with ** Travis CI **, unit test coverage report and is integrated with ** CodeClimate **, ** Sonarcloud ** and ** Codecov **.
+It is the modularization of the Drone application both in **Java 9** modules and in **Maven** modules. It has a continuous integration with **Travis CI**, unit test coverage report and is integrated with **CodeClimate**, **Sonarcloud** and **Codecov**.
 
 <!--### What I can do?
 TODO
