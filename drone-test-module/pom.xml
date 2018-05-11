@@ -73,7 +73,7 @@
                                 <phase>test</phase>
                                 <configuration>
                                     <tasks>
-                                        <replace file="target/jacoco-ut/jacoco.xml" token="com/" value="src/main/java/com/"/>
+                                        <replace file="target/jacoco-ut/jacoco.xml" token="com/" value="drone-module/src/main/java/com/"/>
                                     </tasks>
                                 </configuration>
                                 <goals>
