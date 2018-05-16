@@ -1,5 +1,5 @@
 module drone.module {
-    requires lombok;
+    requires static lombok;
     exports com.drone.common to com.test, drone.app, com.testexec;
     exports com.drone.service to com.test, drone.app, com.testexec;
     exports com.drone.driver to com.test, drone.app, com.testexec;
