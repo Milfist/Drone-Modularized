@@ -110,4 +110,10 @@ public class DriverUTest {
 		Assert.assertEquals(POSITION, result);
 	}
 
+	@Test
+	public void shouldBeOkWhenCreateANewObject() {
+		Driver d = new DriverImpl();
+		Assert.assertNotNull(d);
+	}
+
 }
