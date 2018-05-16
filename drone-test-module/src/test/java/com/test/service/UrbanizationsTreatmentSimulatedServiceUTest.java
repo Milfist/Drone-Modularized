@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertNotNull;
 
 public class UrbanizationsTreatmentSimulatedServiceUTest {
 
@@ -85,6 +86,13 @@ public class UrbanizationsTreatmentSimulatedServiceUTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void shouldBeIllegalArgumentExceptionInGetAdjacentCallForOtherDirection() {
 		rService.getAdjacent("5", "OTHER");
+	}
+
+	@Test
+	public void shouldBeOkWhenCreateANewObject() {
+//		UrbanizationsTreatmentSimulatedService d = new UrbanizationsTreatmentSimulatedService();
+		service = new UrbanizationsTreatmentSimulatedServiceImpl();
+		assertNotNull(service);
 	}
 
 }
