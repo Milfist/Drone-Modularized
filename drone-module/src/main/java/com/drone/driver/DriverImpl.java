@@ -2,19 +2,19 @@ package com.drone.driver;
 
 import com.drone.common.Directions;
 import com.drone.service.UrbanizationsTreatmentService;
-//import lombok.NoArgsConstructor;
+import lombok.NoArgsConstructor;
 //import lombok.extern.slf4j.Slf4j;
 /**
  * @see Driver
  */
 //@Slf4j
-//@NoArgsConstructor
+@NoArgsConstructor
 public class DriverImpl implements Driver {
 
     private UrbanizationsTreatmentService service;
 
-    public DriverImpl() {
-    }
+//    public DriverImpl() {
+//    }
 
     /**
      * Driver class constructor
