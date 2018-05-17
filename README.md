@@ -15,8 +15,8 @@ It is the modularization of the **[Drone][1]** application both in **Java 9** mo
 ### What I can do?
 
 * <code>*mvn clean install*</code>: Build traditional maven modules.
-* <code>*mvn clean install -P j9</code>: Build executable java9 modules.
-* <code>*mvn exec:exec</code>: The modules drone-app and drone-exec-test, can be executed if we enter their roots and execute this sentence.
+* <code>*mvn clean install -P j9*</code>: Build executable java9 modules.
+* <code>*mvn exec:exec*</code>: The modules drone-app and drone-exec-test, can be executed if we enter their roots and execute this sentence.
 * <code>*mvn test*</code>: Execute the unit tests and generate the coverage report.
 * <code>*mvn verify -P integration-test*</code>: Execute the integration test.
 <!--* <code>*mvn site*</code>: Generate Javadoc documentation.-->
