@@ -15,7 +15,7 @@
         <mockito2.version>2.18.0</mockito2.version>
         <build-helper-maven-plugin>1.9.1</build-helper-maven-plugin>
         <maven-javadoc-plugin>3.0.0</maven-javadoc-plugin>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
        
         <!--It will be used to locate the file to be used-->
         <build.profile.id>dev</build.profile.id>
